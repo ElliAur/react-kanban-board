@@ -5,7 +5,7 @@ function App() {
   // Render the main application layout
   return (
     // Full-screen container with centered content and purple background
-    <div className="w-screen h-screen flex items-center justify-center bg-purple-200">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-purple-200">
       <Board />
     </div>
   )

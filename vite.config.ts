@@ -4,6 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/~x115562/Kanban/',
   plugins: [
     tailwindcss(),
     react()

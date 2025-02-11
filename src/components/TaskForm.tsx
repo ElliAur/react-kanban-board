@@ -32,8 +32,8 @@ const TaskForm = ({ addTask }: TaskFormProps) => {
   return (
     // Form container with flex layout
     <div className="flex justify-center p-4 w-full">
-      <div className="flex flex-col lg:flex-row gap-4 p-4 bg-white rounded-lg shadow-md w-full max-w-4xl">
-        <div className="flex flex-col flex-1">
+      <div className="flex flex-col lg:flex-row gap-4 p-4 bg-white rounded-lg shadow-md w-full max-w-5xl">
+        <div className="flex flex-col flex-2">
           <input 
             type="text"
             placeholder="Title"
@@ -43,7 +43,7 @@ const TaskForm = ({ addTask }: TaskFormProps) => {
           />
           {error && !title && <span className="text-red-500 text-sm">Title is required</span>}
         </div>
-        <div className="flex flex-col flex-1">
+        <div className="flex flex-col flex-3">
           <input 
             type="text"
             placeholder="Description"
@@ -64,7 +64,7 @@ const TaskForm = ({ addTask }: TaskFormProps) => {
         </div>
         <button 
           onClick={handleSubmit}
-          className="bg-indigo-950 text-white px-4 py-2 rounded-md shadow-md hover:bg-purple-600"
+          className="bg-indigo-900 text-white px-4 py-2 rounded-md shadow-md hover:bg-purple-600"
         >
           Add Task
         </button>

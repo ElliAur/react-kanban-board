@@ -26,8 +26,8 @@ const Task = ({ task, deleteTask }: TaskProps) => {
   // Determine the priority color based on the priority level and status
   const priorityColor = (): string => {
     if (task.status === "done") return "bg-gray-300 border-gray-400";
-    if (priorityLevel <= 2) return "bg-rose-100/90 border-rose-300";
-    if (priorityLevel <= 5) return "bg-yellow-100/50 border-yellow-200";
+    if (priorityLevel <= 1) return "bg-rose-100/90 border-rose-300";
+    if (priorityLevel <= 3) return "bg-yellow-100/50 border-yellow-200";
     return "bg-teal-100/50 border-teal-200";
   }
 

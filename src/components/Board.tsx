@@ -9,12 +9,12 @@ const Board = () => {
   
   return (
     // Main board container
-    <div className="flex flex-col h-full w-[80vw]">
+    <div className="flex flex-col flex-1 h-full w-[80vw]">
       <div>
         <h1 className="font-[Cherry_Bomb_One] text-9xl p-8 text-center text-indigo-950">Kanban Board</h1>
       </div>
       <TaskForm addTask={addTask} />
-      <div className="flex flex-1 overflow-y-auto">
+      <div className="flex flex-1">
         {columns.map((column) => (
           <Column 
             key={column.title} 

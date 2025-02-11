@@ -24,7 +24,15 @@ const Column = ({ title, tasks, updateTask, deleteTask }: ColumnProps) => {
     <div className="bg-slate-50 rounded-2xl p-4 m-4 flex-1"
       onDrop={handleDrop}
       onDragOver={(e) => e.preventDefault()}>
-      <h2 className="font-[Cherry_Bomb_One] tracking-widest text-3xl pb-4 uppercase text-center text-indigo-950">{title}</h2>
+      <h2 className="
+      font-[Cherry_Bomb_One] 
+      tracking-widest 
+      text-3xl 
+      pb-4 
+      uppercase 
+      text-center 
+      text-indigo-950"
+      >{title}</h2>
       {tasks.map((task) => (
         <TaskComponent key={task.id} task={task} deleteTask={deleteTask} />
       ))}    
