@@ -53,11 +53,14 @@ export const useTasks = () => {
 
   // Delete a task
   const deleteTask = (taskId: string) => {
-    setTasks((prevTasks) => {
-      const updatedTasks = prevTasks.filter((task) => task.id !== taskId);
-      localStorage.setItem("tasks", JSON.stringify(updatedTasks));
-      return updatedTasks;
-    });
+    const confirmed = window.confirm("Are you sure you want to delete this task?");
+    if (confirmed) {
+      setTasks((prevTasks) => {
+        const updatedTasks = prevTasks.filter((task) => task.id !== taskId);
+        localStorage.setItem("tasks", JSON.stringify(updatedTasks));
+        return updatedTasks;
+      });
+    }
   };
 
   return {

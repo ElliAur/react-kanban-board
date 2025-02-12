@@ -40,20 +40,35 @@ const Task = ({ task, deleteTask }: TaskProps) => {
       className={`border-8 rounded-lg px-2 m-2 text-2xl text-indigo-950 ${priorityColor()}`}
       onClick={() => setExpanded(!expanded)}
     >
-      <div className="font-semibold py-2">{task.title}</div>
-      <div>
-        {expanded ? task.description : task.description.length > 20 ? `${task.description.substring(0, 20)}...` : task.description}
-      </div>
       <div className="flex justify-between">
-        <div className="py-2">Deadline: {formatDeadline(task.deadline)}</div>
-        <div>
-          <button 
-            onClick={() => deleteTask(task.id)}
-            className="bg-indigo-900 text-white px-2 py-1 rounded ml-2"
-          >
-            Delete
+        <div className="flex">
+          <button
+          onClick={() => setExpanded(!expanded)}
+          className="mr-3">
+            <svg xmlns="http://www.w3.org/2000/svg" className={`h-6 w-6 transform ${expanded ? 'rotate-90' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
           </button>
+          <div className="flex flex-col">
+            <div className="font-semibold py-2">{task.title}</div>
+            {expanded && (
+              <>
+            <div>{task.description}</div>
+            <div className="py-2">Deadline: {formatDeadline(task.deadline)}</div>
+              </>
+            )}
+          </div>
         </div>
+      <div className="flex flex-col self-end p-2">
+        <button 
+          onClick={() => deleteTask(task.id)}
+          className="bg-indigo-900 hover:bg-red-500 text-white px-2 py-1 rounded ml-2"
+          >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={5} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
       </div>
     </div>
   );
