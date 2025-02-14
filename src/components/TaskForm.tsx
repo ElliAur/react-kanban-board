@@ -59,6 +59,7 @@ const TaskForm = ({ addTask }: TaskFormProps) => {
             value={deadline}
             onChange={(e) => setDeadline(e.target.value)}
             className={`border p-2 rounded-md ${error && !deadline ? "border-red-500" : "border-gray-300"}`}
+            min={new Date().toISOString().split('T')[0]}
           />
           {error && !deadline && <span className="text-red-500 text-sm">Deadline is required</span>}
         </div>
@@ -73,5 +74,4 @@ const TaskForm = ({ addTask }: TaskFormProps) => {
   );
 };
 
-// Export the TaskForm component as the default export
 export default TaskForm;

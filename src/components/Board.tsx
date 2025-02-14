@@ -29,5 +29,4 @@ const Board = () => {
   );
 };
 
-// Export the Board component as the default export
 export default Board;

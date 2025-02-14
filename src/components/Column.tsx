@@ -1,22 +1,22 @@
 // Import necessary types and components
-import { Task } from "../types";
+import { Status, Task } from "../types";
 import TaskComponent from "./Task";
 
 // Define the props interface for Column
 interface ColumnProps {
   title: string;
   tasks: Task[];
-  updateTask: (taskId: string, newStatus: Task['status']) => void;
+  updateTask: (taskId: string, updates: Partial<Task>) => void;
   deleteTask: (taskId: string) => void;
 }
 
 const Column = ({ title, tasks, updateTask, deleteTask }: ColumnProps) => {
-  
   // Handle the drop event for drag-and-drop functionality
   const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
     const id = e.dataTransfer.getData("id");
-    updateTask(id, title as Task['status']);
+    // updateTask(id, title as Task['status']);
+    updateTask(id, { status: title as Status });
   }
 
   return (
@@ -34,11 +34,10 @@ const Column = ({ title, tasks, updateTask, deleteTask }: ColumnProps) => {
       text-indigo-950"
       >{title}</h2>
       {tasks.map((task) => (
-        <TaskComponent key={task.id} task={task} deleteTask={deleteTask} />
+        <TaskComponent key={task.id} task={task} updateTask={updateTask} deleteTask={deleteTask} />
       ))}    
     </div>
   );
 };
 
-// Export the Column component as the default export
 export default Column;

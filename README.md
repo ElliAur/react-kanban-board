@@ -1,20 +1,29 @@
 # My React Kanban Board
 
-This project is a simple Kanban board application built with React. It allows users to manage tasks by adding and deleting them. Tasks can be moved between different columns representing different statuses.
+This project is a simple Kanban board application built with React. It allows users to manage tasks by adding, updating and deleting them. Tasks can be moved between different columns representing different statuses.
+
+You can try the kanban board [here](https://niisku.lab.fi/~x115562/Kanban/index.html).
 
 ![Kanban Board](./assets/kanban-board.png)
 
 ## Features
 
+- Currently only available for web devices.
 - Add new tasks with a title, description, and deadline.
 - Update the status of tasks by dragging and dropping them between columns.
+- Update task title, description and deadline and save changes
 - Delete tasks.
 - Tasks are saved in the browser's local storage.
+- Expand/collapse task view by pressing task.
 - Priority levels are indicated by color:
   - 🔴 High Priority – Urgent tasks that need immediate attention
   - 🟡 Medium Priority – Important but not critical tasks
   - 🟢 Low Priority – Non-urgent tasks with no immediate deadline
   - ⚪ Completed – Tasks that have been finished
+
+## Upcoming Features
+
+- Responsiveness for different screen sizes and devices.
 
 ## Project Structure
 
@@ -26,7 +35,7 @@ The project is structured as follows:
   - `Column.tsx`: The column component that holds tasks.
   - `Task.tsx`: The task component that represents individual tasks.
   - `TaskForm.tsx`: The form component for adding new tasks.
-- `src/types.ts`: Defines TypeScript types used in the application.
+- `src/types.ts`: Defines TypeScript types/interfaces used in the application.
 - `src/useTaskManager.ts`: Custom hook for managing tasks and their statuses.
 
 ## Getting Started
