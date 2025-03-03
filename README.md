@@ -2,8 +2,6 @@
 
 This project is a simple Kanban board application built with React. It allows users to manage tasks by adding, updating and deleting them. Tasks can be moved between different columns representing different statuses.
 
-You can try the kanban board [here](https://niisku.lab.fi/~x115562/Kanban/index.html).
-
 ![Kanban Board](./assets/kanban-board.png)
 
 ## Features
