@@ -71,4 +71,4 @@ This project is licensed under the MIT License. See the [LICENSE](../LICENSE) fi
 
 ## Author
 
-This project was developed by [ElliAur](https://github.com/ElliAur) as a learning exercise to explore React in February 2025.
+This project was developed by [ElliAur](https://github.com/ElliAur) as a learning exercise to explore React.
